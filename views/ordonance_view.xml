@@ -25,7 +25,7 @@
                             <field name="patient_id"/>
                         </group>
                         <notebook>
-                            <page string="Medical">
+                            <page string="Medicaments">
                                 <field name="medicament_ids">
                                     <tree editable="botoom">
                                         <field name="medicament_id"/>
@@ -40,10 +40,7 @@
                 </form>
             </field>
         </record>
-
-
         <!-- actions opening views on models -->
-
         <record model="ir.actions.act_window" id="ordonance_action_window">
             <field name="name">Ordonance</field>
             <field name="res_model">cabinet.ordonance</field>
@@ -52,7 +49,7 @@
 
         <!-- Top menu item -->
         <menuitem name="Ordonance" id="cabinet_ordonance_cat" parent="cabinet_menu_root"
-               sequence="3" action="ordonance_action_window"/>
+               sequence="6" action="ordonance_action_window"/>
 
 
 </odoo>

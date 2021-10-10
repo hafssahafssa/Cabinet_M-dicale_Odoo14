@@ -49,7 +49,7 @@
         </record>
 
         <menuitem name="Médicaments" id="cabinet_medicaments_cat" parent="cabinet_menu_root"
-                 sequence="4" action="medicaments_action_window"/>
+                 sequence="7" action="medicaments_action_window"/>
 
     </data>
 </odoo>

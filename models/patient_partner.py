@@ -18,9 +18,11 @@ class CabinetPatientPartner(models.Model):
         ('client', 'Client'),
         ('premiere_visite', 'Premiére visite')
     ], default='client')
-
-    type = fields.Selection(selection_add=[('patient', "Patient")],default='patient')
+    type = fields.Selection(selection_add=[('patient', "Patient")])
+    #type = fields.Selection(selection_add=[('patient', "Patient")],default='patient')
     mode_du_paiement = fields.Selection([('cheque', 'Chéque'), ('espece', 'Espece')])
 
     ordonance_ids = fields.One2many("cabinet.ordonance", "patient_id")
+    appoitement_ids = fields.One2many("cabinet.appoitement", "patient_id")
+
 

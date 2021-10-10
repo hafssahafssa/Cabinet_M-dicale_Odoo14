@@ -6,4 +6,5 @@ from . import Ordonance
 from . import Consultation
 from . import Paiement
 from . import patient_partner
+from . import Appoitement
 

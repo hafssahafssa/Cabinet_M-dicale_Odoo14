@@ -19,15 +19,22 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['sale_management'],
+    'depends': ['sale_management','board'],
     # always loaded
     'data': [
+        'reports/reports.xml',
+        'reports/reports_templates.xml',
+
+        'security/cabinet_security.xml',
         'security/ir.model.access.csv',
         'views/patient_view.xml',
         'views/ordonance_view.xml',
         'views/consultation_view.xml',
         'views/medicament_view.xml',
-        'views/paiement.xml'
+        'views/paiement.xml',
+        'views/appoitement_view.xml',
+        'views/dashboard.xml',
+
 
     ],
     'installable': True,
