@@ -1,20 +1,28 @@
-# -*- coding: utf-8 -*-
+import json
 from odoo import http
+from odoo.http import request, Response
 
-# class MxCMedicale(http.Controller):
-#     @http.route('/mxcmedicale/mxcmedicale/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
 
-#     @http.route('/mxcmedicale/mxcmedicale/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('mxcmedicale.listing', {
-#             'root': '/mxcmedicale/mxcmedicale',
-#             'objects': http.request.env['mxcmedicale.mxcmedicale'].search([]),
-#         })
+class MxCMedicale(http.Controller):
+    
+    @http.route('/api/hello', methods=["GET"], auth='none', type='http', csrf=False)
+    def hello_hafssa(self, **kw):
+        return "Hello Hafssa"
 
-#     @http.route('/mxcmedicale/mxcmedicale/objects/<model("mxcmedicale.mxcmedicale"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('mxcmedicale.object', {
-#             'object': obj
-#         })
+    # API 
+    @http.route('/api/patient', methods=["GET"], auth='none', type='json', csrf=False)
+    def get_patient(self, **kw):
+        patients = request.env['res.partner'].sudo().search([('type', '=', 'patient')])
+        print("patients", patients)
+        # pour retourner une data
+        list_patients = []
+        for patient in patients:
+            list_patients.append({
+                "name": patient.name,
+                "sexe": patient.sexe,
+                "CIN": patient.CIN,
+                "status": patient.statut
+            })
+        print("patients", list_patients, type(list_patients))    
+        return list_patients
+    
