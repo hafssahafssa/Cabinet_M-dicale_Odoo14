@@ -53,10 +53,10 @@
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
             <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('cabinet2.patient_list_view')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('cabinet2.patient_form_view')})]"/><!--pour apparu la cettte view hériter au début-->
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cabinet.patient_list_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('cabinet.patient_form_view')})]"/><!--pour apparu la cettte view hériter au début-->
             <field name="domain">[('type','=','patient')]</field>
-            <!--field name="context">{'default_type': 'patient'}</field-->
+            <field name="context">{'default_type': 'patient'}</field>
         </record>
         <!-- Top menu item -->
         <menuitem name="Cabinet" id="cabinet_menu_root"/>
